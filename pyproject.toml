@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hc-agent"
+version = "0.1.0"
+description = "Healthcare admission cost comparison agent (CMS Inpatient DRG)"
+authors = [ { name = "CursorAI" } ]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests>=2.31.0",
+  "pandas>=2.2.2",
+  "numpy>=2.0.0",
+  "tqdm>=4.66.0",
+  "typer[all]>=0.12.3",
+  "rapidfuzz>=3.9.0",
+  "python-dotenv>=1.0.1",
+  "matplotlib>=3.8.0",
+]
+
+[project.scripts]
+hc-agent = "hc_agent.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hc_agent*"]

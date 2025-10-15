@@ -1,0 +1,2 @@
+[console_scripts]
+hc-agent = hc_agent.cli:app
